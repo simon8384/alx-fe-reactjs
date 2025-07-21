@@ -6,6 +6,7 @@ function Navbar() {
     backgroundColor: '#004080',
     display: 'flex',
     gap: '15px',
+    justifyContent: 'center',  // <-- Add this line to center items horizontally
   };
 
   const linkStyle = {
