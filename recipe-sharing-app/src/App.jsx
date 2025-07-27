@@ -7,13 +7,16 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
-          <>
-            <h1>Recipe Sharing App</h1>
-            <AddRecipeForm />
-            <RecipeList />
-          </>
-        } />
+        <Route
+          path="/"
+          element={
+            <>
+              <h1>Recipe Sharing App</h1>
+              <AddRecipeForm />
+              <RecipeList />
+            </>
+          }
+        />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
       </Routes>
     </Router>
