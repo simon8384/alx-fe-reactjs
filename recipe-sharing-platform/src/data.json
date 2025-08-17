@@ -3,18 +3,48 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://picsum.photos/seed/spaghetti/300/200"
+    "image": "https://picsum.photos/seed/spaghetti/300/200",
+    "ingredients": ["200g spaghetti", "100g pancetta", "2 eggs", "50g parmesan", "Black pepper"],
+    "steps": ["Boil pasta", "Fry pancetta", "Mix eggs and cheese", "Combine all ingredients"]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://picsum.photos/seed/chicken/300/200"
+    "image": "https://picsum.photos/seed/chicken/300/200",
+    "ingredients": ["500g chicken", "200ml yogurt", "Tomato sauce", "Spices"],
+    "steps": ["Marinate chicken", "Grill chicken", "Cook sauce", "Combine and simmer"]
   },
   {
     "id": 3,
     "title": "Vegetable Stir Fry",
     "summary": "Quick and healthy stir fry with fresh vegetables and soy sauce.",
-    "image": "https://picsum.photos/seed/vegetable/300/200"
+    "image": "https://picsum.photos/seed/veggie/300/200",
+    "ingredients": ["1 bell pepper", "1 carrot", "1 zucchini", "Soy sauce", "Garlic", "Olive oil"],
+    "steps": ["Chop vegetables", "Heat oil in wok", "Add garlic", "Stir fry vegetables", "Add soy sauce"]
+  },
+  {
+    "id": 4,
+    "title": "Beef Tacos",
+    "summary": "Crispy tacos filled with seasoned beef, fresh vegetables, and cheese.",
+    "image": "https://picsum.photos/seed/tacos/300/200",
+    "ingredients": ["200g ground beef", "Taco shells", "Lettuce", "Tomato", "Cheddar cheese", "Taco seasoning"],
+    "steps": ["Cook beef with seasoning", "Prepare taco shells", "Add lettuce, tomato, beef, and cheese"]
+  },
+  {
+    "id": 5,
+    "title": "Pancakes",
+    "summary": "Fluffy pancakes perfect for a hearty breakfast, served with syrup and berries.",
+    "image": "https://picsum.photos/seed/pancakes/300/200",
+    "ingredients": ["1 cup flour", "1 cup milk", "1 egg", "2 tbsp sugar", "1 tsp baking powder", "Butter"],
+    "steps": ["Mix dry ingredients", "Add milk and egg", "Whisk until smooth", "Cook on hot pan until golden"]
+  },
+  {
+    "id": 6,
+    "title": "Caprese Salad",
+    "summary": "Fresh and simple Italian salad with mozzarella, tomatoes, basil, and balsamic glaze.",
+    "image": "https://picsum.photos/seed/caprese/300/200",
+    "ingredients": ["2 tomatoes", "150g mozzarella", "Fresh basil leaves", "Olive oil", "Balsamic glaze", "Salt & pepper"],
+    "steps": ["Slice tomatoes and mozzarella", "Layer with basil leaves", "Drizzle olive oil and balsamic glaze", "Season with salt and pepper"]
   }
 ]
