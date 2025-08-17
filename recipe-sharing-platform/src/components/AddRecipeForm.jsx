@@ -9,28 +9,29 @@ const AddRecipeForm = () => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [instructions, setInstructions] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({}); // <-- errors state
+
+  // Validation function
+  const validate = () => {
+    const newErrors = {};
+    if (!title.trim()) newErrors.title = "Title is required";
+    if (!ingredients.trim()) newErrors.ingredients = "Ingredients are required";
+    if (ingredients.split(",").length < 2)
+      newErrors.ingredients = "Add at least two ingredients separated by commas";
+    if (!instructions.trim()) newErrors.instructions = "Instructions are required";
+    if (instructions.split(".").filter(Boolean).length < 2)
+      newErrors.instructions = "Add at least two instructions separated by periods";
+    return newErrors;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Simple validation
-    if (!title || !ingredients || !instructions) {
-      setError("Please fill out all fields.");
+    const validationErrors = validate(); // <-- call validate
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors); // <-- update errors
       return;
     }
 
-    if (ingredients.split(",").length < 2) {
-      setError("Please add at least two ingredients, separated by commas.");
-      return;
-    }
-
-    if (instructions.split(".").length < 2) {
-      setError("Please add at least two instructions separated by periods.");
-      return;
-    }
-
-    // Add new recipe to data.json (for demo purposes we log it)
     const newRecipe = {
       id: data.length + 1,
       title,
@@ -46,9 +47,9 @@ const AddRecipeForm = () => {
     setTitle("");
     setIngredients("");
     setInstructions("");
-    setError("");
+    setErrors({});
 
-    // Navigate back to home page (or show success message)
+    // Navigate back to Home Page
     navigate("/");
   };
 
@@ -56,10 +57,6 @@ const AddRecipeForm = () => {
     <div className="min-h-screen bg-gray-50 py-10 px-4 md:px-20">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Add New Recipe</h2>
-
-        {error && (
-          <p className="text-red-500 font-medium mb-4 text-center">{error}</p>
-        )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
@@ -73,6 +70,9 @@ const AddRecipeForm = () => {
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               placeholder="E.g. Spaghetti Carbonara"
             />
+            {errors.title && (
+              <p className="text-red-500 text-sm mt-1">{errors.title}</p>
+            )}
           </div>
 
           <div>
@@ -86,6 +86,9 @@ const AddRecipeForm = () => {
               placeholder="Separate ingredients with commas: egg, milk, sugar"
               rows={4}
             />
+            {errors.ingredients && (
+              <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>
+            )}
           </div>
 
           <div>
@@ -99,6 +102,9 @@ const AddRecipeForm = () => {
               placeholder="Separate steps with periods: Boil pasta. Fry pancetta."
               rows={6}
             />
+            {errors.instructions && (
+              <p className="text-red-500 text-sm mt-1">{errors.instructions}</p>
+            )}
           </div>
 
           <button
