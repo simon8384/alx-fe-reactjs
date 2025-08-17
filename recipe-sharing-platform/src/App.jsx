@@ -1,11 +1,10 @@
+// src/App.jsx
+import React from "react";
+import HomePage from "./components/HomePage.jsx";
+import "./index.css";
+
 function App() {
-  return (
-    <div className="bg-gray-50 min-h-screen flex items-center justify-center">
-      <h1 className="text-blue-500 text-4xl font-bold">
-        Recipe Sharing Platform
-      </h1>
-    </div>
-  );
+  return <HomePage />;
 }
 
 export default App;
